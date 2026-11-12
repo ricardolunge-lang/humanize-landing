@@ -1,0 +1,180 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Humanize Podologia</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--olive:#8A8A4E;--od:#5C5D30;--beige:#F5F1E6;--cream:#FCFBF7;--ink:#2F301D;--soft:#5A5B42;--line:#E6E0CF}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Manrope,sans-serif;background:var(--cream);color:var(--ink);font-size:19px;line-height:1.65}
+img{max-width:100%;display:block}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:9;background:rgba(252,251,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:78px}
+header .logo{height:52px;width:auto}
+nav{display:flex;gap:26px;font-weight:600;font-size:16px}nav a{text-decoration:none;color:var(--soft)}nav a:hover{color:var(--od)}
+.btn{display:inline-block;background:var(--olive);color:#fff;text-decoration:none;font-weight:700;padding:16px 30px;border-radius:999px;font-size:18px;transition:.2s}
+.btn:hover{background:var(--od);transform:translateY(-1px)}
+.btn.ghost{background:transparent;border:2px solid var(--olive);color:var(--od)}
+.hero{background:var(--beige);padding:70px 0}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(36px,4.8vw,58px);line-height:1.1;font-weight:800;color:var(--od);margin-bottom:22px;letter-spacing:-.02em}
+.hero p{font-size:21px;color:var(--soft);margin-bottom:34px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero .pic{border-radius:28px;overflow:hidden;aspect-ratio:4/3.4;box-shadow:0 30px 60px -30px rgba(60,60,30,.4)}
+.hero .pic img{width:100%;height:100%;object-fit:cover}
+.badges{display:flex;gap:22px;flex-wrap:wrap;margin-top:36px;font-weight:600;font-size:16px;color:var(--od)}
+.badges span:before{content:"✓ ";color:var(--olive)}
+section{padding:90px 0}
+.eyebrow{color:var(--olive);font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:14px;margin-bottom:10px}
+h2{font-size:clamp(30px,3.8vw,44px);line-height:1.15;color:var(--od);font-weight:800;margin-bottom:18px;letter-spacing:-.01em}
+.lead{font-size:21px;max-width:780px;color:var(--soft);margin-bottom:50px}
+.proc{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-bottom:90px}
+.proc:last-child{margin-bottom:0}
+.proc.rev .media{order:2}
+.proc .media{border-radius:26px;overflow:hidden;aspect-ratio:4/3;background:var(--beige)}
+.proc .media img{width:100%;height:100%;object-fit:cover}
+.proc h3{font-size:clamp(26px,3vw,34px);color:var(--od);font-weight:800;margin-bottom:6px;line-height:1.2}
+.proc .sub{color:var(--olive);font-weight:700;margin-bottom:16px}
+.proc p{margin-bottom:16px}
+.box{background:var(--beige);border-radius:20px;padding:24px 26px;margin-top:10px}
+.box h4{font-size:17px;text-transform:uppercase;letter-spacing:.08em;color:var(--od);margin-bottom:10px}
+.box ul{list-style:none;columns:2;column-gap:24px}.box li{padding-left:24px;position:relative;margin-bottom:6px;break-inside:avoid;font-size:17px}
+.box li:before{content:"";position:absolute;left:4px;top:11px;width:9px;height:9px;border-radius:50%;background:var(--olive)}
+.box.warn{background:#fff;border:1px solid var(--line)}.box.warn li:before{background:#B8775F;border-radius:2px}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:8px}
+.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}
+.step b{display:flex;width:36px;height:36px;border-radius:50%;background:var(--olive);color:#fff;align-items:center;justify-content:center;margin-bottom:10px}
+.step h5{font-size:18px;color:var(--od);margin-bottom:6px}.step p{font-size:16px;color:var(--soft);margin:0}
+.alt{background:var(--beige)}
+.alt .box{background:#fff}
+.benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.ben{background:#fff;border-radius:18px;padding:24px;border:1px solid var(--line)}
+.ben h5{font-size:19px;color:var(--od);margin-bottom:6px}.ben p{font-size:16.5px;color:var(--soft)}
+.price-intro{background:var(--olive);color:#fff;border-radius:26px;padding:40px;margin-bottom:30px;text-align:center}
+.price-intro h3{font-size:clamp(26px,3.4vw,38px);font-weight:800;line-height:1.2;margin-bottom:6px}
+.price-intro p{font-size:21px;opacity:.95}
+.plist{display:grid;gap:18px}
+.pitem{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px 34px;display:grid;grid-template-columns:1fr auto;gap:8px 30px;align-items:center}
+.pitem h4{font-size:24px;font-weight:800}
+.tag{display:inline-block;background:var(--beige);color:var(--od);font-weight:700;font-size:15px;padding:4px 14px;border-radius:999px;margin:8px 0}
+.pitem p{font-size:18px;color:var(--soft)}
+.price{font-size:36px;font-weight:800;color:var(--od);white-space:nowrap;text-align:right}
+.pitem.feat{border:2px solid var(--olive);position:relative}
+.pitem.feat:after{content:"Mais completo";position:absolute;top:-13px;right:28px;background:var(--olive);color:#fff;font-size:13px;font-weight:800;padding:4px 12px;border-radius:999px;letter-spacing:.04em}
+.note{margin-top:24px;font-size:17px;color:var(--soft);text-align:center}
+.pay{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:18px}.pay span{background:var(--beige);border-radius:999px;padding:8px 18px;font-weight:600;font-size:16px;color:var(--od)}
+.cta{background:var(--od);color:#fff;text-align:center}
+.cta h2{color:#fff}.cta .lead{color:#ECEAD8;margin:0 auto 30px}
+.cta .btn{background:#fff;color:var(--od)}.cta .btn:hover{background:var(--beige)}
+.contacts{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+footer{padding:50px 0;text-align:center;color:var(--soft)}
+footer .logo{height:90px;width:auto;margin:0 auto 18px}
+footer .loc{font-size:20px;font-weight:700;color:var(--od);margin-bottom:6px}
+@media(max-width:900px){.hero .wrap,.proc{grid-template-columns:1fr;gap:30px}.proc.rev .media{order:0}.steps{grid-template-columns:1fr 1fr}nav{display:none}}
+@media(max-width:600px){body{font-size:18px}.box ul{columns:1}.steps{grid-template-columns:1fr}.pitem{grid-template-columns:1fr;padding:26px}.price{text-align:left}section{padding:64px 0}.hero{padding:44px 0}header .logo{height:42px}header .btn{padding:11px 18px;font-size:15px}}
+</style></head><body>
+<header><div class="wrap"><img class="logo" src="img/logo.png" alt="Humanize Podologia">
+<nav><a href="#procedimentos">Procedimentos</a><a href="#ilib">ILIB</a><a href="#rosacea">Rosácea</a><a href="#precos">Preços</a></nav>
+<a class="btn" href="https://wa.me/5547984088320" target="_blank">Agendar</a></div></header>
+
+<div class="hero"><div class="wrap">
+<div><div class="eyebrow">Podologia e laserterapia</div>
+<h1>Pés saudáveis fazem toda a diferença</h1>
+<p>Cuidamos dos seus pés e unhas com técnica, tecnologia e carinho. Da limpeza completa ao tratamento de fungos com laser, cada atendimento começa com uma avaliação individual.</p>
+<div class="ctas"><a class="btn" href="https://wa.me/5547984088320" target="_blank">Agendar avaliação</a><a class="btn ghost" href="#precos">Ver preços</a></div>
+<div class="badges"><span>Técnica segura e indolor</span><span>Materiais esterilizados</span><span>Acompanhamento de perto</span></div></div>
+<div class="pic"><img src="img/podologia.webp" alt="Atendimento de podologia"></div>
+</div></div>
+
+<section id="procedimentos"><div class="wrap">
+<div class="eyebrow">Procedimentos</div>
+<h2>Entenda cada tratamento</h2>
+<p class="lead">Explicamos tudo com clareza: o que é, como é feito e para quem é indicado.</p>
+
+<div class="proc"><div class="media"><img src="img/podologia.webp" alt="Podoprofilaxia"></div><div>
+<h3>Podoprofilaxia</h3><div class="sub">Limpeza completa e cuidado dos pés</div>
+<p>É o cuidado completo dos pés feito por profissional de podologia. Fazemos o corte correto das unhas, a limpeza dos cantos, a remoção de calos e calosidades (quando houver), a higienização e a hidratação.</p>
+<p>Ideal para manter os pés saudáveis, prevenir unhas encravadas e caminhar com mais conforto.</p>
+<div class="box"><h4>Inclui</h4><ul><li>Corte e limpeza das unhas</li><li>Remoção de calos e calosidades</li><li>Higienização</li><li>Hidratação</li><li>Orientações para casa</li></ul></div>
+</div></div>
+
+<div class="proc rev"><div class="media"><img src="img/laser-unhas.webp" alt="Laserterapia na unha"></div><div>
+<h3>Laserterapia para onicomicose</h3><div class="sub">Tecnologia e cuidado para unhas mais saudáveis</div>
+<p>Onicomicose é a micose de unha: uma infecção por fungos que deixa a unha amarelada, grossa, quebradiça ou descolada. O laser de baixa potência atua diretamente na unha afetada, ajudando a eliminar o fungo de forma segura e sem dor.</p>
+<p>O tratamento requer acompanhamento e regularidade. A continuidade das sessões é importante para acompanhar a evolução e ajustar o tratamento conforme a resposta de cada pessoa.</p>
+<div class="box"><h4>Benefícios</h4><ul><li>Ajuda a eliminar o fungo</li><li>Devolve a saúde da unha</li><li>Técnica segura e eficaz</li><li>Resultados gradativos</li></ul></div>
+</div></div>
+
+<div class="proc"><div class="media"><img src="img/cuidado-unhas.webp" alt="Podoprofilaxia laminar com laser"></div><div>
+<h3>Podoprofilaxia laminar + laserterapia</h3><div class="sub">O tratamento mais completo para unhas com fungos</div>
+<p>Primeiro preparamos a unha afetada: limpeza e desbaste da lâmina comprometida pelo fungo. Em seguida aplicamos o laser. Com a unha preparada, a luz alcança melhor a área infectada e o tratamento rende mais.</p>
+<p>É indicado para quem quer começar o tratamento da onicomicose da forma mais eficiente.</p>
+</div></div>
+</div></section>
+
+<section id="ilib" class="alt"><div class="wrap">
+<div class="proc"><div class="media"><img src="img/ilib.webp" alt="Terapia ILIB"></div><div>
+<div class="eyebrow">Terapia complementar</div>
+<h3>Terapia ILIB</h3><div class="sub">Irradiação Laser Intravascular do Sangue</div>
+<p>A ILIB utiliza a luz do laser de baixa intensidade e a luz infravermelha para estimular o organismo, promovendo melhora na circulação sanguínea, redução de inflamações e aceleração da cicatrização. Traz benefícios sistêmicos e locais.</p>
+<p>Na podologia é indicada como terapia complementar no tratamento de diversas alterações. É segura, indolor e não invasiva.</p>
+</div></div>
+<h2 style="margin-top:20px">Principais benefícios da ILIB</h2>
+<div class="benefits" style="margin-top:24px">
+<div class="ben"><h5>Melhora a circulação</h5><p>Estimula a oxigenação dos tecidos e a microcirculação.</p></div>
+<div class="ben"><h5>Ação anti-inflamatória</h5><p>Reduz processos inflamatórios e auxilia na recuperação.</p></div>
+<div class="ben"><h5>Estimula a cicatrização</h5><p>Favorece a regeneração dos tecidos e acelera a recuperação.</p></div>
+<div class="ben"><h5>Alivia dores</h5><p>Ajuda no controle da dor, desconfortos e na recuperação muscular.</p></div>
+<div class="ben"><h5>Fortalece a imunidade</h5><p>Aumenta a produção de células de defesa e ajuda a combater fungos e bactérias.</p></div>
+<div class="ben"><h5>Potencializa outros tratamentos</h5><p>Melhora o efeito dos tratamentos podológicos, como o laser para onicomicose.</p></div>
+<div class="ben"><h5>Energia e disposição</h5><p>Combate o cansaço e a fadiga, melhorando o bem-estar geral.</p></div>
+<div class="ben"><h5>Saúde da pele</h5><p>Estimula a regeneração celular e melhora a aparência da pele.</p></div>
+</div>
+<div class="proc" style="margin-top:40px;align-items:start">
+<div class="box"><h4>Indicações na podologia (exemplos)</h4><ul><li>Onicomicose (micose de unha)</li><li>Onicólise (descolamento da unha)</li><li>Onicocriptose (unha encravada)</li><li>Pós-procedimentos podológicos</li><li>Feridas e lesões nos pés</li><li>Dor e inflamações</li><li>Pé diabético (complementar)</li><li>Regeneração dos tecidos</li></ul></div>
+<div class="box warn"><h4>Contraindicações</h4><ul><li>Gestantes</li><li>Câncer (sem liberação médica)</li><li>Epilepsia</li><li>Uso de anticoagulantes (exige avaliação médica)</li><li>Infecções ativas na região</li><li>Febre</li><li>Doenças autoimunes em atividade</li><li>Alergia à luz ou fotossensibilidade</li></ul></div>
+</div>
+</div></section>
+
+<section id="rosacea"><div class="wrap">
+<div class="proc rev"><div class="media"><img src="img/rosacea.webp" alt="Tratamento para rosácea"></div><div>
+<div class="eyebrow">Estética</div>
+<h3>Tratamento para rosácea</h3><div class="sub">Laser de baixa potência pontual + ILIB</div>
+<p>A rosácea é uma condição inflamatória crônica da pele que causa vermelhidão, sensibilidade, vasinhos e, em alguns casos, pápulas e lesões. Cada pele é única, por isso o tratamento é individualizado.</p>
+<p><b>Laser pontual:</b> atua diretamente nos pontos mais sensíveis, ajudando a reduzir a inflamação, a vermelhidão e a reatividade vascular.<br><b>ILIB:</b> estimula a circulação e o metabolismo celular, favorecendo a cicatrização e a oxigenação dos tecidos. A combinação potencializa os resultados de forma segura e progressiva.</p>
+<div class="box"><h4>Benefícios</h4><ul><li>Redução da vermelhidão</li><li>Menos inflamação</li><li>Mais conforto e resistência</li><li>Melhor qualidade da pele</li></ul></div>
+</div></div>
+<h3 style="font-size:26px;color:var(--od);margin:10px 0 18px">Passo a passo do atendimento</h3>
+<div class="steps">
+<div class="step"><b>1</b><h5>Avaliação inicial</h5><p>Histórico de saúde, medicamentos, alergias e características da pele. Fotos e checagem de contraindicações.</p></div>
+<div class="step"><b>2</b><h5>Higienização suave</h5><p>Limpeza com produtos para pele sensível, sem fragrância. Sem esfoliação ou extrações.</p></div>
+<div class="step"><b>3</b><h5>Laser pontual</h5><p>Aplicação nos pontos indicados, com proteção ocular e monitoramento do conforto.</p></div>
+<div class="step"><b>4</b><h5>ILIB</h5><p>Terapia na modalidade indicada (transcutânea ou intravascular), seguindo os protocolos de segurança.</p></div>
+<div class="step"><b>5</b><h5>Finalização</h5><p>Hidratante suave e orientação de protetor solar diário (FPS 30 ou mais) e cuidados em casa.</p></div>
+</div>
+</div></section>
+
+<section id="precos" class="alt"><div class="wrap">
+<div class="eyebrow">Preços e procedimentos</div>
+<h2>Valores claros, sem surpresas</h2>
+<div class="price-intro"><h3>Quer começar a terapia, mas não sabe por onde?</h3><p>Comece por aqui.</p></div>
+<div class="plist">
+<div class="pitem"><div><h4>Podoprofilaxia completa</h4><span class="tag">Pés completos sem calos e calosidades</span><p>Limpeza completa dos pés, corte e cuidado das unhas, higienização e hidratação.</p></div><div class="price">R$ 250,00</div></div>
+<div class="pitem"><div><h4>Podoprofilaxia completa</h4><span class="tag">Pés completos com calos e calosidades</span><p>Tudo da podoprofilaxia completa, mais a remoção cuidadosa de calos e calosidades para caminhar com alívio.</p></div><div class="price">R$ 280,00</div></div>
+<div class="pitem feat"><div><h4>Podoprofilaxia de 2 unhas com laserterapia</h4><span class="tag">Unhas com fungos</span><p>Preparação das duas unhas afetadas (limpeza e desbaste) seguida da aplicação do laser, que age melhor na unha preparada.</p></div><div class="price">R$ 280,00</div></div>
+<div class="pitem"><div><h4>Laserterapia para 2 unhas</h4><span class="tag">Sessão de laser</span><p>Laser de baixa potência em duas unhas com onicomicose. Indolor e seguro, com resultados gradativos.</p></div><div class="price">R$ 200,00</div></div>
+<div class="pitem"><div><h4>Laserterapia para 1 unha</h4><span class="tag">Sessão de laser</span><p>Laser em uma unha com onicomicose. Ideal para começar quando só uma unha está afetada.</p></div><div class="price">R$ 120,00</div></div>
+</div>
+<p class="note">O número de sessões e a indicação do tratamento são definidos após avaliação. Faltas ou interrupções podem comprometer o resultado, que também varia conforme o grau da infecção e os cuidados em casa.</p>
+<div class="pay"><span>Dinheiro</span><span>Pix</span><span>Cartão de crédito e débito</span></div>
+</div></section>
+
+<section class="cta"><div class="wrap">
+<h2>Agende sua avaliação</h2>
+<p class="lead">Fale com a gente pelo WhatsApp e escolha o melhor horário. Cuidar dos seus pés também é saúde.</p>
+<div class="contacts"><a class="btn" href="https://wa.me/5547984088320" target="_blank">WhatsApp (47) 98408-8320</a><a class="btn" href="https://wa.me/5547984367736" target="_blank">WhatsApp (47) 98436-7736</a></div>
+</div></section>
+
+<footer><img class="logo" src="img/logo.png" alt="Humanize Podologia">
+<div class="loc">Atendimento em Barra Velha e Blumenau</div>
+<p>(47) 98408-8320 · (47) 98436-7736</p></footer>
+</body></html>
